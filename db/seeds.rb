@@ -5,3 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.create(name: "Humzah", bio: "I am the creator of this app")
+User.create(name: "Joe", bio: "I am NOT the creator of this app")
+Restaurant.create(name: "McDonalds",description: "Americas Fast food restaurant", address: "12 Broadway")
+
+FoodItem.create(name: "Big Mac", restaurant_id: 1)
+FoodItem.create(name: "McChicken Sandwhich", restaurant_id: 1)
+FoodItem.create(name: "French Fries", restaurant_id: 1)
+
+Tag.create(name: "fast food")
+Tag.create(name: "cheap")
+Tag.create(name: "sandwhich")
+
+RestaurantTag.create(restaurant_id: 1, tag_id: 1)
+RestaurantTag.create(restaurant_id: 1, tag_id: 2)
+RestaurantTag.create(restaurant_id: 1, tag_id: 3)
+
+FoodItemTag.create(food_item_id: 1, tag_id: 3)
+FoodItemTag.create(food_item_id: 2, tag_id: 2)
+FoodItemTag.create(food_item_id: 2, tag_id: 3)
+
+Review.create(user_id: 1, restaurant_id: 1, content: "Golden Arches, golden food", hospitality_score: 3, ambience: "Busy, uncofortable", ambience_score: 1)
+
+
+ReviewItem.create(review_id: 1, food_item_id: 1, content: "Dank but gross", rating: 3)
