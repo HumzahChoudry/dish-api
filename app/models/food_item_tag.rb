@@ -1,0 +1,2 @@
+class FoodItemTag < ApplicationRecord
+end
