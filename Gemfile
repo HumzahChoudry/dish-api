@@ -23,8 +23,9 @@ gem 'puma', '~> 3.11'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'rest-client'
 gem 'bootsnap', '>= 1.1.0', require: false
-
+gem 'figaro'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
  gem 'rack-cors'
 
