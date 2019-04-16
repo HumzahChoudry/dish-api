@@ -1,11 +1,13 @@
 class Api::V1::RestaurantsController < ApplicationController
 
-  def test
-    byebug
-  end
+
   def query_restaurants
-    restaurants_hopefully = Restaurant.get_auto_complete_responses(params[:slug])
-    puts restaurants_hopefully
-    render json: restaurants_hopefully
+    puts params[:slug]
+    search_term = "%#{params[:slug]}%"
+    # sql = "Select * from restaurants WHERE name LIKE '%#{params[:slug]}%'"
+    # records_array = ActiveRecord::Base.connection.execute(sql)
+    records_array = Restaurant.where("name ILIKE ?", search_term)
+    puts records_array
+    render json: records_array
   end
 end

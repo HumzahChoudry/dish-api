@@ -5,9 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Restaurant.destroy_all
+RestaurantTag.destroy_all
+FoodItem.destroy_all
+FoodItemTag.destroy_all
+Review.destroy_all
+ReviewItem.destroy_all
+
 User.create(name: "Humzah", bio: "I am the creator of this app")
 User.create(name: "Joe", bio: "I am NOT the creator of this app")
 Restaurant.create(name: "McDonalds",description: "Americas Fast food restaurant", address: "12 Broadway")
+
+Restaurant.create(name: "McDonalds", description: "a great new place", address: "123 ez street")
+Restaurant.create(name: "BK Jani", description: "a great new place", address: "123 ez street")
+Restaurant.create(name: "Cookieville", description: "a great new place", address: "123 ez street")
+Restaurant.create(name: "Cookhouse", description: "a great new place", address: "123 ez street")
+Restaurant.create(name: "Coo coo nest", description: "a great new place", address: "123 ez street")
 
 FoodItem.create(name: "Big Mac", restaurant_id: 1)
 FoodItem.create(name: "McChicken Sandwhich", restaurant_id: 1)
