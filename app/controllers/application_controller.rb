@@ -1,5 +1,13 @@
 class ApplicationController < ActionController::API
 
+  def logged_in?
+   !!get_current_user
+  end
+
+  def authorized
+   render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+  end
+
   private
 
   def encode_token(payload)
@@ -7,7 +15,6 @@ class ApplicationController < ActionController::API
   end
 
   def login_user(username, password)
-
     user = User.find_by(name: username)
     # if user && user.authenticate(password)
     #   user
