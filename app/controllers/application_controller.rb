@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
   end
 
   def login_user(username, password)
-    user = User.find_by(name: username)
+    user = User.find_by(username: username)
     # if user && user.authenticate(password)
     #   user
     # else

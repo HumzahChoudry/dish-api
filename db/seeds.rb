@@ -42,8 +42,14 @@
 # Review.create(user_id: 1, restaurant_id: 1, content: "Golden Arches, golden food", hospitality_score: 3, ambience: "Busy, uncofortable", ambience_score: 1)
 #
 #
-# ReviewItem.create(review_id: 1, food_item_id: 1, content: "Dank but gross", rating: 3)
-x = Restaurant.create(name: "Test", description: "a test place", address: "123 test street")
-FoodItem.create(name: "Test Mac", restaurant_id: x.id)
-FoodItem.create(name: "Test Whopper", restaurant_id: x.id)
-FoodItem.create(name: "Test Fries", restaurant_id: x.id)
+# # ReviewItem.create(review_id: 1, food_item_id: 1, content: "Dank but gross", rating: 3)
+# x = Restaurant.create(name: "Test", description: "a test place", address: "123 test street")
+# FoodItem.create(name: "Test Mac", restaurant_id: x.id)
+# FoodItem.create(name: "Test Whopper", restaurant_id: x.id)
+# FoodItem.create(name: "Test Fries", restaurant_id: x.id)
+users = User.all
+user  = users.first
+following = users[2..4]
+followers = users[5..6]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }

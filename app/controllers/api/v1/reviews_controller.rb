@@ -22,6 +22,6 @@ class Api::V1::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.permit(:content, :restaurant_id, :user_id, :ambience_rating, :hospitality_rating)
+    params.permit(:content, :restaurant_id, :user_id, :ambience_rating, :hospitality_rating, :review_items)
   end
 end
